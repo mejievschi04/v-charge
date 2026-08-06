@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Deploy V CHARGE pe VPS (site static sub /v-charge/)
-# Folosire: cd /var/www/app/v-charge && chmod +x scripts/deploy-vps.sh && ./scripts/deploy-vps.sh
+# Deploy V CHARGE pe VPS (site static pe v-charge.volta.md)
+# Folosire: cd /var/www/v-charge && chmod +x scripts/deploy-vps.sh && ./scripts/deploy-vps.sh
 
 set -eo pipefail
 
@@ -19,4 +19,4 @@ fi
 echo ">>> git pull"
 git pull origin main || git pull origin master
 
-echo ">>> gata — https://app.volta.md/v-charge/"
+echo ">>> gata — https://v-charge.volta.md/"

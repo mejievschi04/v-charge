@@ -181,11 +181,14 @@ a {
   letter-spacing: -0.04em;
   line-height: 1.18;
   color: rgba(243, 245, 248, 0.94);
-  max-width: 16ch;
 }
 
-.hero-h1 em {
-  font-style: normal;
+.hero-h1-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-h1-line--mute {
   color: var(--mute);
   font-weight: 500;
 }
@@ -954,7 +957,6 @@ a {
 
   .hero-h1 {
     font-size: clamp(1.15rem, 4.6vw, 1.35rem);
-    max-width: 22ch;
   }
 
   .hero-p {
