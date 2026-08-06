@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Deploy V CHARGE pe VPS (site static pe v-charge.volta.md)
-# Folosire: cd /var/www/v-charge && chmod +x scripts/deploy-vps.sh && ./scripts/deploy-vps.sh
+# Folosire: cd /var/www/app/v-charge && chmod +x scripts/deploy-vps.sh && ./scripts/deploy-vps.sh
 
 set -eo pipefail
 
