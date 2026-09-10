@@ -30,7 +30,7 @@
       <h1>Termeni si conditii</h1>
       <p class="legal-lede">Acesti Termeni reglementeaza utilizarea aplicatiei mobile V CHARGE si a serviciilor de incarcare pentru vehicule electrice. Te rugam sa ii citesti cu atentie inainte de a crea un cont sau de a porni o sesiune.</p>
       <div class="legal-meta">
-        <span>Versiune <strong>2026-07-24</strong></span><span>Operator <strong>Volta SRL</strong></span><span>Contact <strong>support@volta.md</strong></span>
+        <span>Versiune <strong>2026-09-03</strong></span><span>Operator <strong>Volta SRL</strong></span><span>Contact <strong>support@volta.md</strong></span>
       </div>
     </header>
 
@@ -43,7 +43,7 @@
         <li><a href="#s3"><span class="n">3.</span>Contul utilizatorului</a></li>
         <li><a href="#s4"><span class="n">4.</span>Serviciul de incarcare</a></li>
         <li><a href="#s5"><span class="n">5.</span>Tarife si preturi</a></li>
-        <li><a href="#s6"><span class="n">6.</span>Sold, plati si retururi</a></li>
+        <li><a href="#s6"><span class="n">6.</span>Plata, prestarea serviciului si retururi</a></li>
         <li><a href="#s7"><span class="n">7.</span>Facturare</a></li>
         <li><a href="#s8"><span class="n">8.</span>Rezervari</a></li>
         <li><a href="#s9"><span class="n">9.</span>Utilizare acceptabila</a></li>
@@ -88,7 +88,7 @@
       </ul>
       <p>
         Daca nu esti de acord, nu utiliza aplicatia si nu creea un cont.
-        Versiunea aplicabila este cea afisata in aplicatie (versiune 2026-07-24).
+        Versiunea aplicabila este cea afisata in aplicatie (versiune 2026-09-03).
       </p>
     </section>
 
@@ -127,7 +127,7 @@
     <section class="legal-section" id="s5">
       <h2><span class="n">5.</span> Tarife si preturi</h2>
       <p>
-        Pretul energiei (lei/kW) este afisat in aplicatie inainte sau in timpul utilizarii
+        Pretul energiei (lei/kWh) este afisat in aplicatie inainte sau in timpul utilizarii
         Serviciului. Tarifele pot diferi intre tipurile de cont si pot fi actualizate de operator.
       </p>
       <ul>
@@ -140,7 +140,7 @@
     </section>
 
     <section class="legal-section" id="s6">
-      <h2><span class="n">6.</span> Sold, plati si retururi</h2>
+      <h2><span class="n">6.</span> Plata, prestarea serviciului si retururi</h2>
       <p>
         Pentru conturile care folosesc plata cu cardul, Serviciul poate functiona pe baza unui
         <strong>sold preplatit</strong> (wallet). Inainte de incarcare, soldul trebuie sa acopere
@@ -153,8 +153,23 @@
             procesata de MAIB conform politicii acestuia.</li>
         <li>Tranzactiile apar in istoricul din aplicatie; statusul „platit” / „in asteptare”
             reflecta starea confirmata de procesator.</li>
-        <li>Retururile (partiale sau totale) pot fi initiate conform politicilor noastre si
-            ale procesatorului, in limitele sumelor eligibile si ale soldului disponibil.</li>
+        <li>Serviciul este prestat electronic si la statia de incarcare selectata. Prestarea
+            incepe cand confirmi pornirea sesiunii in aplicatie si statia incepe sa livreze
+            energie. Nu exista livrare fizica de produse.</li>
+        <li>Suma si tariful aplicabil sunt afisate in aplicatie inainte de confirmarea
+            alimentarii soldului sau a pornirii sesiunii, dupa caz.</li>
+        <li>Poti solicita restituirea unei plati duplicate, efectuate eronat, a unei sume
+            neutilizate din sold sau a unei sume aferente unui serviciu care nu a fost prestat
+            dintr-o cauza imputabila operatorului.</li>
+        <li>Serviciile de incarcare deja prestate si energia efectiv consumata nu sunt
+            rambursabile, cu exceptia erorilor de tarifare, defectiunilor confirmate sau a
+            cazurilor in care legea aplicabila prevede altfel.</li>
+        <li>Cererea de retur se transmite la <a href="mailto:support@volta.md">support@volta.md</a>
+            si trebuie sa indice contul utilizatorului, data, suma si motivul solicitarii.
+            Cererea va fi verificata pe baza istoricului tranzactiei si al sesiunii.</li>
+        <li>Daca returul este aprobat, suma eligibila se restituie prin aceeasi metoda de plata
+            folosita initial. Termenul in care suma devine vizibila depinde de banca emitenta
+            si de procesatorul de plata. Drepturile obligatorii ale consumatorului raman neafectate.</li>
         <li>Taxele bancare sau ale procesatorului, daca apar, pot fi in afara controlului nostru.</li>
       </ul>
     </section>
@@ -293,14 +308,32 @@
         <li>E-mail: <a href="mailto:support@volta.md">support@volta.md</a></li>
         <li>Telefon: <a href="tel:+37360535353">+373 60 535 353</a></li>
         <li>Operator: Volta SRL</li>
+        <li id="legal-idno" hidden></li>
+        <li id="legal-address" hidden></li>
       </ul>
     </section>
 
 
     <footer class="legal-footer">
-      <span>Volta SRL · Moldova · v2026-07-24</span>
+      <span>Volta SRL · Moldova · v2026-09-03</span>
       <a href="./">Inapoi la site</a>
     </footer>
   </main>
+  <script src="./config.js"></script>
+  <script>
+    (function () {
+      var cfg = window.VOLTA_EV_PROMO || {};
+      var idno = document.getElementById('legal-idno');
+      var address = document.getElementById('legal-address');
+      if (idno && cfg.companyIdno) {
+        idno.hidden = false;
+        idno.textContent = 'IDNO: ' + cfg.companyIdno;
+      }
+      if (address && cfg.companyAddress) {
+        address.hidden = false;
+        address.textContent = 'Adresa legala: ' + cfg.companyAddress;
+      }
+    })();
+  </script>
 </body>
 </html>

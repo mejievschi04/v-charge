@@ -911,6 +911,43 @@ a {
   color: var(--mute);
 }
 
+.footer-company {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 180px;
+}
+
+.footer-company strong {
+  color: var(--text, #eaf0ff);
+  font-weight: 800;
+}
+
+.payment-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.payment-logos a {
+  display: inline-flex;
+}
+
+.payment-logos img {
+  display: block;
+  width: auto;
+  max-width: 78px;
+  max-height: 30px;
+  object-fit: contain;
+}
+
+.payment-logos img[alt="American Express"] {
+  max-width: 34px;
+  max-height: 34px;
+}
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;

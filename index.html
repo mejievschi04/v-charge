@@ -212,7 +212,7 @@
         <p class="eyebrow reveal">02 — Hartă</p>
         <h2 class="h2 reveal">Găsești stația pe hartă.</h2>
         <p class="body reveal">
-          Vezi ce e disponibil, adresa și prețul pe kW.
+          Vezi ce e disponibil, adresa și prețul pe kWh.
           Alegi stația și rezervi conectorul din același ecran.
         </p>
       </div>
@@ -284,16 +284,44 @@
   </main>
 
   <footer class="footer">
-    <span>Volta SRL · Moldova</span>
+    <div class="footer-company" id="footer-company">
+      <strong>Volta SRL</strong>
+      <span id="footer-idno" hidden></span>
+      <span id="footer-address" hidden></span>
+      <span>Moldova · <a href="mailto:support@volta.md">support@volta.md</a></span>
+    </div>
     <nav class="footer-links" aria-label="Legal">
       <a href="./termeni.html">Termeni</a>
       <a href="./confidentialitate.html">Confidentialitate</a>
       <a href="./info.html">Info</a>
     </nav>
+    <div class="payment-logos" aria-label="Metode de plată acceptate">
+      <a href="https://www.maib.md/" target="_blank" rel="noopener noreferrer" aria-label="Plăți procesate de maib">
+        <img src="./assets/payment-logos/maib.png" alt="maib" width="156" height="44" />
+      </a>
+      <img src="./assets/payment-logos/visa.png" alt="Visa" width="80" height="26" />
+      <img src="./assets/payment-logos/mastercard.png" alt="Mastercard" width="74" height="46" />
+      <img src="./assets/payment-logos/amex.png" alt="American Express" width="119" height="119" />
+    </div>
     <span>powered by Mejievski</span>
   </footer>
 
   <script src="./config.js"></script>
   <script src="./script.js"></script>
+  <script>
+    (function () {
+      var cfg = window.VOLTA_EV_PROMO || {};
+      var idno = document.getElementById('footer-idno');
+      var address = document.getElementById('footer-address');
+      if (idno && cfg.companyIdno) {
+        idno.hidden = false;
+        idno.textContent = 'IDNO ' + cfg.companyIdno;
+      }
+      if (address && cfg.companyAddress) {
+        address.hidden = false;
+        address.textContent = cfg.companyAddress;
+      }
+    })();
+  </script>
 </body>
 </html>
