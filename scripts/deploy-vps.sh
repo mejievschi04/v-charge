@@ -20,6 +20,8 @@ echo ">>> git pull"
 git pull origin main || git pull origin master
 
 echo ">>> gata — https://v-charge.volta.md/"
-echo "Daca linkurile magazine par vechi: hard refresh (Ctrl+Shift+R) sau reincarca nginx:"
+echo "Nu copia orbește nginx HTTP-only peste sites-available (strică SSL)."
+echo "Dacă HTTPS arată alt site (ex. Academy), rulează:"
 echo "  sudo cp deploy/nginx-v-charge.volta.md.conf /etc/nginx/sites-available/v-charge-volta-md"
 echo "  sudo nginx -t && sudo systemctl reload nginx"
+echo "  # dacă lipsește certul: sudo certbot --nginx -d v-charge.volta.md"
