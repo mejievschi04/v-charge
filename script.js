@@ -1,15 +1,18 @@
 (function () {
   var cfg = window.VOLTA_EV_PROMO || {};
-  var ios = cfg.iosStoreUrl || '#download';
-  var android = cfg.androidStoreUrl || '#download';
+  var ios = cfg.iosStoreUrl || '';
+  var android = cfg.androidStoreUrl || '';
+
+  function isStoreUrl(url) {
+    return typeof url === 'string' && /^https?:\/\//i.test(url) && url.indexOf('#') !== 0;
+  }
 
   function wire(sel, url) {
+    if (!isStoreUrl(url)) return;
     document.querySelectorAll(sel).forEach(function (el) {
       el.setAttribute('href', url);
-      if (url.indexOf('http') === 0) {
-        el.setAttribute('target', '_blank');
-        el.setAttribute('rel', 'noopener noreferrer');
-      }
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
     });
   }
 
