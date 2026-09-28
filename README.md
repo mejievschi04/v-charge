@@ -21,14 +21,10 @@ Deschide `http://localhost:3000`.
 
 ## Linkuri magazine
 
-Editează `config.js` când ai URL-urile reale:
+Configurate în `config.js` (și pe butoanele din `index.html`):
 
-```js
-window.VOLTA_EV_PROMO = {
-  iosStoreUrl: '#download',
-  androidStoreUrl: '#download',
-};
-```
+- **App Store:** https://apps.apple.com/us/app/v-charge/id6794557570
+- **Google Play:** https://play.google.com/store/apps/details?id=com.mjsky.voltaev
 
 ## Deploy pe VPS (`v-charge.volta.md`)
 
